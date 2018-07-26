@@ -1,24 +1,46 @@
-# README
+### Summation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### 1. Gemfile追加
 
-Things you may want to cover:
+```ruby
+gem 'webpacker', github: "rails/webpacker"
+```
 
-* Ruby version
+#### 2. Bundle実行する
 
-* System dependencies
+- Run
 
-* Configuration
+  `bundle install`
 
-* Database creation
+- Init webpack
 
-* Database initialization
+  ```
+    bundle
+    bundle exec rails webpacker:install
 
-* How to run the test suite
+    # OR (on rails version < 5.0)
+    bundle exec rake webpacker:install
+  ```
 
-* Services (job queues, cache servers, search engines, etc.)
+After the command lines above excuted, it rendered a ton of files likes :
 
-* Deployment instructions
+```
+  new file:   .babelrc
+  new file:   .browserslistrc
+  modified:   .gitignore
+  new file:   .postcssrc.yml
+  new file:   Gemfile.lock
+  new file:   app/javascript/packs/application.js
+  new file:   bin/webpack
+  new file:   bin/webpack-dev-server
+  modified:   config/environments/development.rb
+  modified:   config/environments/production.rb
+  new file:   config/webpack/development.js
+  new file:   config/webpack/environment.js
+  new file:   config/webpack/production.js
+  new file:   config/webpack/test.js
+  new file:   config/webpacker.yml
+  modified:   package.json
+  new file:   yarn.lock
 
-* ...
+```
