@@ -24,7 +24,7 @@ gem 'webpacker', github: "rails/webpacker"
 After those command lines above were executed, it rendered a ton of files likes :
 (webpacker導入時に生成されたファイル)
 
-```ruby
+```
   new file:   .babelrc
   new file:   .browserslistrc
   modified:   .gitignore
@@ -95,3 +95,37 @@ Check `package.json`, your Js module is add on `dependencies`
 }
 
 ```
+
+#### 4. Usage-使用法
+##### Struct
+
+```
+app/javascript:
+  ├── packs:
+  │   # only webpack entry files here
+  │   └── application.js
+  └── src:
+  │   └── application.css
+  └── images:
+      └── logo.svg
+```
+
+##### Include
+Change `/views/layouts/application.html.erb`
+
+```ruby
+    <%# stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    ->
+      <%= javascript_pack_tag 'application' %>
+      <%= stylesheet_pack_tag 'application' %>
+```
+For `image_path`
+
+```ruby
+  <%= asset_pack_path 'images/logo.svg' %>
+```
+
+Sometimes, only change `<%= javascript_pack_tag 'application' %>` for JS module. Do need to use for `css` or `image`.
+
