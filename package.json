@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "activestorage": "^5.2.0",
     "babel": "^6.23.0",
     "boostrap": "^2.0.0",
     "jquery": "^3.3.1",

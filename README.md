@@ -129,3 +129,27 @@ For `image_path`
 
 Sometimes, only change `<%= javascript_pack_tag 'application' %>` for JS module. Do need to use for `css` or `image`.
 
+
+##### Remove turbolink, activestorage (Turbolinks, Activestorage除去する)
+- Remove gem `turbolinks` + gem `uglifier`
+- Add turbolinks and rails-ujs via yarn
+
+```ruby
+ yarn add turbolinks
+ yarn add rails-ujs
+ yarn add activestorage
+```
+
+- Include turbolink into webpack
+
+```javascript
+  #app/javascript/packs/application.js
+  import Rails from 'rails-ujs'
+  import Turbolinks from 'turbolinks'
+  import ActiveStorage from 'activestorage'
+
+  Rails.start()
+  Turbolinks.start()
+  ActiveStorage.start()
+```
+

@@ -10,5 +10,7 @@
   <%= @high_score.score %>
 </p>
 
+<%= image_tag url_for(@high_score.avatar) %>
+
 <%= link_to 'Edit', edit_high_score_path(@high_score) %> |
 <%= link_to 'Back', high_scores_path %>

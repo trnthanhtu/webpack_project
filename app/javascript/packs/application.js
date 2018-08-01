@@ -8,10 +8,14 @@
 // layout file, like app/views/layouts/application.html.erb
 import 'styles/application'
 import 'styles/page'
+
 import Rails from 'rails-ujs'
 import Turbolinks from 'turbolinks'
+import * as ActiveStorage from 'activestorage'
+import "../utils/direct_uploads.js"
 
-console.log('Hello World from Webpacker')
+
 
 Rails.start()
 Turbolinks.start()
+ActiveStorage.start();
